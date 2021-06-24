@@ -1,7 +1,7 @@
 let allSpan = document.getElementsByTagName('span')
 for (var i=0;i<allSpan.length;i++){
     if(allSpan[i].innerText == "Print length"){
-    	alert("hey I am Jay!")
+    	// alert("hey I am Jay!")
     	let pageTitle = document.getElementsByTagName('title')
     	for(var j = 0; j < pageTitle.length; j++){
     		let str1 = pageTitle[j].innerText
@@ -15,7 +15,7 @@ for (var i=0;i<allSpan.length;i++){
     				str2 = str2.concat('+');
     			}
     		}
-            chrome.runtime.sendMessage(str2);
+            alert(str2);
     	}
     }
 }
