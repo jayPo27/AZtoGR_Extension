@@ -1,9 +1,7 @@
+alert('hi')
 let color = '#3aa757';
 let bookURL = "hello;"
-chrome.runtime.onInstalled.addListener(()=>{
-	chrome.storage.sync.set({color});
-	console.log('Default background color set to %cgreen', 'color: ${color}');
-});
+
 
 window.onload = () => {
 	if (window.location.href.includes('amazon.com')){
@@ -33,7 +31,7 @@ window.onload = () => {
 // + get book title logic
 
 
-			
+
 }
 
 chrome.runtime.onMessage.addListener(
@@ -51,6 +49,5 @@ chrome.runtime.onMessage.addListener(
 		// }
 		// else if(message.greeting === "GRPage"){
 		// 	bookURL = message;
-		// }	
+		// }
 });
-
