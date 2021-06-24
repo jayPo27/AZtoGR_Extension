@@ -19,3 +19,6 @@
 // 		document.getElementById('demo').innerHTML = response;
 // 	});
 // console.log("hello");
+alert(chrome.storage.local.get('key', function(RETURNED_VALUE) {
+	console.log(RETURNED_VALUE.key);
+ }));
