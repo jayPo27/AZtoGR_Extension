@@ -2,20 +2,20 @@
   "name": "Amazon to Good Reads",
   "description": "Build a link from Amazon book selling page to Good Reads",
   "version": "1.0",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "background": {
     "presistent": false,
-    "service_worker": "background.js"
+    "scripts": ["background.js"]
   },
-  "action": {
+  "browser_action": {
     "default_popup": "popup.html"
   },
-  "permissions": ["storage", "activeTab"],
-  "content_scripts": [
-    {
-      "matches": ["*://*.amazon.com/*"],
-      "js": ["contentScript.js"]
-    }
-  ]
+  "permissions": ["storage", "activeTab", "tabs"]
+  // "content_scripts": [
+  //   {
+  //     "matches": ["*://*.amazon.com/*"],
+  //     "js": ["contentScript.js"]
+  //   }
+  // ]
   
 }
