@@ -1,24 +1,10 @@
-//console.log("hello");
-// chrome.runtime.onMessage.addListener(
-// 	function gotMessage(message, seder, sendResponse){
-// 		if(request.type == "some link"){
-// 			alert(message);
-// 			console.log("Nope. Here");
-// 			document.getElementById('demo').innerHTML = message;
-// 		}
-// 		else{
-// 			console.log("wrong");
-// 		}
-		
-// 	});
+function toGR(){
+	chrome.storage.local.get('key', function(RETURNED_VALUE) {
+		window.open(RETURNED_VALUE.key)
+	 })
+}
 
-// chrome.runtime.sendMessage({greeting: "GetURL"},
-// 	function(response){
-// 		alert(response);
-// 		console.log("I'm here");
-// 		document.getElementById('demo').innerHTML = response;
-// 	});
-// console.log("hello");
-alert(chrome.storage.local.get('key', function(RETURNED_VALUE) {
-	console.log(RETURNED_VALUE.key);
- }));
+
+document.getElementById("button1").addEventListener("click", function() {
+	toGR();
+});
