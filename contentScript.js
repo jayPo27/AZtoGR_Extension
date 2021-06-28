@@ -1,22 +1,17 @@
+//gives you to the link in the page in goodreads
 let allSpan = document.getElementsByTagName('span')
 for (var i=0;i<allSpan.length;i++){
     if(allSpan[i].innerText == "Print length"){
-        // alert("hey I am Jay!")
-        let pageTitle = document.getElementsByTagName('title')
-        for(var j = 0; j < pageTitle.length; j++){
-            let str1 = pageTitle[j].innerText
-            var x = str1.indexOf(":");
-            var y = str1.substr(0,x);
-            var split = y.split(" ");
-            var str2 = "https://www.goodreads.com/search?utf8=%E2%9C%93&query="
-            for(var a = 0; a < split.length; a++){
-                str2 = str2.concat(split[a]);
-                if(a != split.length-1){
-                    str2 = str2.concat('+');
-                }
-            }
-            alert(str2);
-            chrome.storage.local.set({key: str2}, function(){});
-        }
-    }
-}
+        let isbn = document.getElementsByTagName('input')
+        var str2 = "https://www.goodreads.com/search?utf8=%E2%9C%93&query="
+        for(var j=0;j<isbn.length;j++){
+           if(isbn[j].type == "hidden" && isbn[j].id == "ASIN" && isbn[j].name == "ASIN"){
+                str3 = isbn[j].value;
+                str2 = str2.concat(str3);
+                //alert(str2);
+                chrome.storage.local.set({key: str2}, function(){});
+                break;
+            }// if 
+        }// for
+    }// outer if
+}// outer for
